@@ -2,43 +2,50 @@
   <div class="search">
     <h1 class="text-center" v-show="false">{{ msg }}</h1>
 
-    <b-modal id="modalCenter" :title="p.name" no-close-on-backdrop ok-only>
+    <b-modal 
+      id="modalCenter" 
+      :title="p.name" 
+      no-close-on-backdrop 
+      ok-only 
+      header-bg-variant="primary" 
+      header-text-variant="light"
+    >
       <b-container fluid class="text-capitalize">
-        <div class="row">
-          <div class="col-6 text-right">altura</div>
-          <div class="col-6">{{ p.height }}</div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-right">peso</div>
-          <div class="col-6">{{ p.mass }}</div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-right">año nacimiento</div>
-          <div class="col-6">{{ p.birth_year }}</div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-right">genero</div>
-          <div class="col-6">{{ p.gender }}</div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-right">planeta</div>
-          <div class="col-6">{{ p.planeta }}</div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-right">films</div>
-          <div class="col-6" v-show="toggles.showFilms">
+        <b-row>
+          <b-col cols="6" class="text-right">altura</b-col>
+          <b-col cols="6">{{ p.height }}</b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6" class="text-right">peso</b-col>
+          <b-col cols="6">{{ p.mass }}</b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6" class="text-right">año nacimiento</b-col>
+          <b-col cols="6">{{ p.birth_year }}</b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6" class="text-right">genero</b-col>
+          <b-col cols="6">{{ p.gender }}</b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6" class="text-right">planeta</b-col>
+          <b-col cols="6">{{ p.planeta }}</b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6" class="text-right">films</b-col>
+          <b-col cols="6" v-show="toggles.showFilms">
             <ul>
               <li v-for="(z, index) in p.filmsName" :key="index">{{ z }}</li>
             </ul>                    
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6" v-for="(img, index) in p.imagenes" :key="index">
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6" v-for="(img, index) in p.imagenes" :key="index">
             <div class="card border-secondary">
               <img class="card-img" v-bind:src="img.thumbnailUrl" alt="Card image">
             </div>
-          </div>
-        </div>  
+          </b-col>
+        </b-row>  
       </b-container>
     </b-modal>
 
