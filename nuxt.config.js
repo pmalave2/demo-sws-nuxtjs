@@ -53,14 +53,13 @@ export default {
     baseURL: '/'
   },
 
-  bootstrapVue: {
-    // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
-    icons: false
-  },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     //set the publicPath to your CDN
     //publicPath: '/'
+  },
+
+  loadingIndicator: {
+    name: 'three-bounce',
   }
 }
